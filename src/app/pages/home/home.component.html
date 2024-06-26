@@ -1,0 +1,26 @@
+<section class="home">
+  <div class="home__child">
+    <form class="home__form"  [formGroup]="registerForm">
+    <h1>CADASTRO</h1>
+    <div>
+      <label for="">Nome: </label>
+      <input type="text" formControlName="name" placeholder="insira o nome">
+      <p ngClass="pError" *ngIf="registerForm.get('name')?.touched && registerForm.get('name')?.hasError('required')">O nome é Obrigatório</p>
+    </div>
+    <div>
+      <label for="">Email: </label>
+      <input type="email" formControlName="email" placeholder="ex: usuario@email.com">
+      <p ngClass="pError" *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.hasError('required')">O Email é Obrigatório</p>
+    </div>
+    <div>
+      <label for="">Senha: </label>
+      <input type="password" formControlName="password" placeholder="insira sua senha">
+    </div>
+    <div>
+      <label for="">Confirme sua senha: </label>
+      <input type="password" formControlName="confirmPassword" placeholder="insira sua senha">
+    </div>
+    <button type="submit">Cadastrar</button>
+  </form>
+</div>
+</section>
